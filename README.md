@@ -1,14 +1,14 @@
-# Create a new OpenShift project
+### Create a new OpenShift project
 $ oc new-project mydemo
 
-# Add the .NET Core application
-$ oc new-app dotnet:7.0-ubi8~https://gitlab.cee.redhat.com/milang/dotnet-metrics-app.git --context-dir PrometheusNetDemo
+### Add the .NET Core application
+$ oc new-app dotnet:7.0-ubi8~https://github.com/sanjaytripathi97/dotnet-istio-metrics-example.git --context-dir PrometheusNetDemo
 
-# Make the .NET Core application accessible externally and show the url
+### Make the .NET Core application accessible externally and show the url
 $ oc expose service s2i-dotnetcore-ex
 $ oc get route s2i-dotnetcore-ex
 
-# check the application
+### check the application
 
 ```
 curl ${ROUTE}/WeatherForecast
